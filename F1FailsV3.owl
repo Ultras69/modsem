@@ -53,7 +53,7 @@ It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment
     <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements -->
 
     <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements">
-        <rdfs:comment>This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions.</rdfs:comment>
+        <rdfs:comment>This annotations property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions.</rdfs:comment>
     </owl:AnnotationProperty>
     
 
