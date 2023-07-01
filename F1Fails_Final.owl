@@ -1,0 +1,1132 @@
+@prefix : <http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix f1: <http://www.semanticweb.org/federicoprandi/ontologies/> .
+@prefix bbc: <http://www.bbc.co.uk/ontologies/sport/#> .
+@prefix dc1: <https://protege.stanford.edu/plugins/owl/dc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix veh: <http://ontology.eil.utoronto.ca/icity/Vehicle/#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix F1Fails: <http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@base <http://www.semanticweb.org/federicoprandi/ontologies/F1Fails> .
+
+<http://www.semanticweb.org/federicoprandi/ontologies/F1Fails> rdf:type owl:Ontology ;
+                                                                owl:imports <http://www.ontologydesignpatterns.org/cp/owl/bag.owl> ;
+                                                                dc:author "Federico Prandi"@en ;
+                                                                dc:date "5/07/2023"@en ;
+                                                                dc:description "This ontology want to describe the Accidents happened on the Formula 1 Races."@en ;
+                                                                dc:title "Formula 1 Fails Ontology"@en ;
+                                                                rdfs:label "F1Fails"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+dc:author rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  https://protege.stanford.edu/plugins/owl/dc/dublincore.owlauthor
+dc1:dublincore.owlauthor rdf:type owl:AnnotationProperty .
+
+
+###  https://protege.stanford.edu/plugins/owl/dc/dublincore.owldate
+dc1:dublincore.owldate rdf:type owl:AnnotationProperty .
+
+
+###  https://protege.stanford.edu/plugins/owl/dc/dublincore.owldescription
+dc1:dublincore.owldescription rdf:type owl:AnnotationProperty .
+
+
+###  https://protege.stanford.edu/plugins/owl/dc/dublincore.owltitle
+dc1:dublincore.owltitle rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_Involved_In
+F1Fails:Car_Involved_In rdf:type owl:ObjectProperty ;
+                        owl:inverseOf F1Fails:Event_involved_Vehicle ;
+                        rdfs:domain F1Fails:Vehicle ;
+                        rdfs:range F1Fails:Event ;
+                        rdfs:comment "A car that is involved in accident of some type"@en ;
+                        rdfs:label "Car Involved in"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driven_By
+F1Fails:Driven_By rdf:type owl:ObjectProperty ;
+                  owl:inverseOf F1Fails:Drives ;
+                  rdfs:comment "Car driven by some driver"@en ;
+                  rdfs:label "Driven by"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Involved_In
+F1Fails:Driver_Involved_In rdf:type owl:ObjectProperty ;
+                           owl:inverseOf F1Fails:Event_involved_the_driver ;
+                           rdf:type owl:TransitiveProperty ;
+                           rdfs:domain F1Fails:Driver_F1 ;
+                           rdfs:range F1Fails:Event ;
+                           owl:propertyChainAxiom ( F1Fails:Drives
+                                                    F1Fails:Car_Involved_In
+                                                  ) ;
+                           rdfs:comment """Returns Driver involved in at least one event. It uses a chain property:
+Driver Drives a Car -> a Car is involved in an event -> so the driver is involved the event"""@en ;
+                           rdfs:label "Driver involved in"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Work_For
+F1Fails:Driver_Work_For rdf:type owl:ObjectProperty ;
+                        owl:inverseOf F1Fails:Team_Driver_is ;
+                        rdf:type owl:TransitiveProperty ;
+                        rdfs:domain F1Fails:Driver ;
+                        rdfs:range F1Fails:Team ;
+                        owl:propertyChainAxiom ( F1Fails:Drives
+                                                 F1Fails:Owned_By
+                                               ) ;
+                        rdfs:comment "The driver works for a specific team"@en ;
+                        rdfs:label "Driver Works For"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives
+F1Fails:Drives rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+               rdfs:range F1Fails:Vehicle ;
+               rdfs:comment "A driver drives a car"@en ;
+               rdfs:label "Drives"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_In_Season
+F1Fails:Event_Happened_In_Season rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf F1Fails:Season_With_Event ;
+                                 rdfs:domain F1Fails:Event ;
+                                 rdfs:range F1Fails:Seasons ;
+                                 rdfs:comment "An Event happen into a specific season"@en ;
+                                 rdfs:label "Event Happened in Season"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_in_Track
+F1Fails:Event_Happened_in_Track rdf:type owl:ObjectProperty ;
+                                owl:inverseOf F1Fails:Track_Involved_In_Event ;
+                                rdf:type owl:FunctionalProperty ;
+                                rdfs:domain F1Fails:Event ;
+                                rdfs:range F1Fails:Track ;
+                                rdfs:comment "An Event happed into a specific track"@en ;
+                                rdfs:label "Event Happened in a Track"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Involve_The_Team
+F1Fails:Event_Involve_The_Team rdf:type owl:ObjectProperty ;
+                               owl:inverseOf F1Fails:Team_Involved_In_Event ;
+                               rdf:type owl:TransitiveProperty ;
+                               rdfs:domain F1Fails:Event ;
+                               rdfs:range F1Fails:Team ;
+                               owl:propertyChainAxiom ( F1Fails:Event_involved_Vehicle
+                                                        F1Fails:Owned_By
+                                                      ) ;
+                               rdfs:comment """A team is inolved into a specific Event
+An Event Crashed with some Vehicle -> Vheicle is owned by a Team -> Event involve a Team"""@en ;
+                               rdfs:label "Event involved the Team"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_Vehicle
+F1Fails:Event_involved_Vehicle rdf:type owl:ObjectProperty ;
+                               rdfs:domain F1Fails:Event ;
+                               rdfs:range F1Fails:Vehicle ;
+                               rdfs:comment "An Event crash with some vehicle"@en ;
+                               rdfs:label "Event involved the Vehicle"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_the_driver
+F1Fails:Event_involved_the_driver rdf:type owl:ObjectProperty ,
+                                           owl:TransitiveProperty ;
+                                  rdfs:domain F1Fails:Event ;
+                                  rdfs:range F1Fails:Driver_F1 ;
+                                  rdfs:comment "An event involved a driver into that"@en ;
+                                  rdfs:label "Event involved the Driver"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owned_By
+F1Fails:Owned_By rdf:type owl:ObjectProperty ;
+                 owl:inverseOf F1Fails:Owns ;
+                 rdfs:domain F1Fails:Vehicle ;
+                 rdfs:range F1Fails:Team ;
+                 rdfs:comment "A car is owned by a team"@en ;
+                 rdfs:label "Owned By"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owns
+F1Fails:Owns rdf:type owl:ObjectProperty ;
+             rdfs:domain F1Fails:Team ;
+             rdfs:range F1Fails:Vehicle ;
+             rdfs:comment "A team owns a car"@en ;
+             rdfs:label "Owns"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_With_Event
+F1Fails:Season_With_Event rdf:type owl:ObjectProperty ;
+                          rdfs:domain F1Fails:Seasons ;
+                          rdfs:range F1Fails:Event ;
+                          rdfs:comment "In a season happen an event"@en ;
+                          rdfs:label "Season with Event"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Seasons_has_the_Team
+F1Fails:Seasons_has_the_Team rdf:type owl:ObjectProperty ;
+                             owl:inverseOf F1Fails:Team_Run_In_Season ;
+                             rdfs:domain F1Fails:Seasons ;
+                             rdfs:range F1Fails:Team ;
+                             rdfs:comment "Contains all the teams that run into that season"@en ;
+                             rdfs:label "Season has the Teams"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Driver_is
+F1Fails:Team_Driver_is rdf:type owl:ObjectProperty ;
+                       rdfs:domain F1Fails:Team ;
+                       rdfs:range F1Fails:Driver ;
+                       rdfs:comment "People who work for a team"@en ;
+                       rdfs:label "Team Driver is"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Involved_In_Event
+F1Fails:Team_Involved_In_Event rdf:type owl:ObjectProperty ,
+                                        owl:TransitiveProperty ;
+                               rdfs:domain F1Fails:Team ;
+                               rdfs:range F1Fails:Event ;
+                               rdfs:comment "A Team involved in an Event"@en ;
+                               rdfs:label "Team Involved In Event"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Run_In_Season
+F1Fails:Team_Run_In_Season rdf:type owl:ObjectProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain F1Fails:Team ;
+                           rdfs:range F1Fails:Seasons ;
+                           rdfs:comment "A team run into a season"@en ;
+                           rdfs:label "Team run in Season"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Involved_In_Event
+F1Fails:Track_Involved_In_Event rdf:type owl:ObjectProperty ;
+                                rdfs:domain F1Fails:Track ;
+                                rdfs:range F1Fails:Event ;
+                                rdfs:comment "A track used into a season like a grandPrix"@en ;
+                                rdfs:label "Track involved in Event"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car
+F1Fails:Car rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#DriverName
+F1Fails:DriverName rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf F1Fails:Driver_F1 ;
+                   rdfs:comment "Name of the driver"@en ;
+                   rdfs:label "Driver Name"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1
+F1Fails:Driver_F1 rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event
+F1Fails:Event rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType
+F1Fails:EventType rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf F1Fails:Event ;
+                  rdfs:domain F1Fails:Event ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:oneOf [ rdf:type rdf:List ;
+                                           rdf:first "Crash" ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "Failure" ;
+                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                 rdf:first "HumanError" ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ]
+                             ] ;
+                  rdfs:comment "Type of the event"@en ;
+                  rdfs:label "Event Type"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season
+F1Fails:Season rdf:type owl:DatatypeProperty ;
+               rdfs:domain F1Fails:Seasons ;
+               rdfs:comment "A F1 Season"@en ;
+               rdfs:label "Season"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#SeasonYear
+F1Fails:SeasonYear rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf F1Fails:Season ;
+                   rdfs:domain F1Fails:Seasons ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "A year of the Season"@en ;
+                   rdfs:label "Season Year"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team
+F1Fails:Team rdf:type owl:DatatypeProperty ;
+             rdfs:domain F1Fails:Team .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName
+F1Fails:TeamName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf F1Fails:Team ;
+                 rdfs:comment "Name of the team"@en ;
+                 rdfs:label "Team Name"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamSeason
+F1Fails:TeamSeason rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf F1Fails:Team ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Season in which the team raced"@en ;
+                   rdfs:label "Team Season"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track
+F1Fails:Track rdf:type owl:DatatypeProperty ;
+              rdfs:domain F1Fails:Track .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLength
+F1Fails:TrackLength rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf F1Fails:Track ;
+                    rdfs:range xsd:integer ;
+                    rdfs:comment "Track length in meter"@en ;
+                    rdfs:label "Track Length"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLocation
+F1Fails:TrackLocation rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf F1Fails:Track ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Track name"@en ;
+                      rdfs:label "Track Location"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackNation
+F1Fails:TrackNation rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf F1Fails:Track ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Nation of the track"@en ;
+                    rdfs:label "Track Nation"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackType
+F1Fails:TrackType rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf F1Fails:Track ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:oneOf [ rdf:type rdf:List ;
+                                           rdf:first "Race" ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "Street" ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ]
+                             ] ;
+                  rdfs:comment "Type of the track enumerated for Race And Street"@en ;
+                  rdfs:label "Track Type"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackUsed
+F1Fails:TrackUsed rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf F1Fails:Track ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Set if it is still used"@en ;
+                  rdfs:label "Track Used"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#WheelsNumber
+F1Fails:WheelsNumber rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf F1Fails:Car ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "Number of wheels"@en ;
+                     rdfs:label "Wheels Number"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/icity/Vehicle/#Vehicle
+veh:Vehicle rdf:type owl:Class ;
+            owl:equivalentClass F1Fails:Vehicle ;
+            rdfs:comment "External ontology about vehicle" ;
+            rdfs:label "iCity - Vehicle" ;
+            rdfs:seeAlso "https://enterpriseintegrationlab.github.io/icity/Vehicle/doc/index-en.html#Vehicle" .
+
+
+###  http://www.bbc.co.uk/ontologies/sport/#SportingOrganisation
+bbc:SportingOrganisation rdf:type owl:Class ;
+                         owl:equivalentClass F1Fails:Team ;
+                         rdfs:comment "External onology about teams" ;
+                         rdfs:label "BBC - Team" ;
+                         rdfs:seeAlso "https://iptc.org/thirdparty/bbc-ontologies/sport.html" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo
+F1Fails:Alfa_Romeo rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty F1Fails:TeamName ;
+                                         owl:hasValue "Alfa Romeo"
+                                       ] ;
+                   rdfs:subClassOf F1Fails:Team ;
+                   rdfs:comment "Teams leads by RedBull"@en ;
+                   rdfs:label "Alfa Romeo"@it .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin
+F1Fails:AstonMartin rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty F1Fails:TeamName ;
+                                          owl:hasValue "Aston Martin"
+                                        ] ;
+                    rdfs:subClassOf F1Fails:Team ;
+                    owl:disjointWith F1Fails:Team_Ferrari ;
+                    rdfs:comment "Teams leads by Aston MArtin" ;
+                    rdfs:label "Aston Martin" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car
+F1Fails:Car rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty F1Fails:WheelsNumber ;
+                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                       owl:onDatatype xsd:integer ;
+                                                       owl:withRestrictions ( [ xsd:minExclusive 3
+                                                                              ]
+                                                                            )
+                                                     ]
+                                ] ;
+            rdfs:subClassOf F1Fails:Vehicle ;
+            owl:disjointWith F1Fails:Moto .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1
+F1Fails:Car_F1 rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty F1Fails:Driven_By ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass F1Fails:Driver_F1
+                                   ] ;
+               rdfs:subClassOf F1Fails:Car ;
+               rdfs:comment "A car that compete into a Formula 1 Series" ;
+               rdfs:label "Car F1" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1_Crashed
+F1Fails:Car_F1_Crashed rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty F1Fails:Car_Involved_In ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass F1Fails:Event
+                                           ] ;
+                       rdfs:subClassOf F1Fails:Car_F1 ;
+                       rdfs:comment "Car involved into a car crash" ;
+                       rdfs:label "Car F1 Crashed" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Crash
+F1Fails:Crash rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty F1Fails:EventType ;
+                                    owl:hasValue "Crash"
+                                  ] ;
+              rdfs:subClassOf F1Fails:Event ;
+              owl:disjointWith F1Fails:Failure ,
+                               F1Fails:Human_Error ;
+              rdfs:comment "Car crash event between two vehicle" ;
+              rdfs:label "Crash" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver
+F1Fails:Driver rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty F1Fails:Drives ;
+                                     owl:someValuesFrom F1Fails:Vehicle
+                                   ] ;
+               rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+               rdfs:comment "A person who drive some vehicles"@en ;
+               rdfs:label "Driver"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1
+F1Fails:Driver_F1 rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty F1Fails:Driver_Work_For ;
+                                        owl:someValuesFrom F1Fails:Team
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty F1Fails:Drives ;
+                                        owl:someValuesFrom F1Fails:Car_F1
+                                      ] ;
+                  rdfs:subClassOf F1Fails:Driver .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1_Involved_In_Event
+F1Fails:Driver_F1_Involved_In_Event rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                          owl:onProperty F1Fails:Driver_Involved_In ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass F1Fails:Event
+                                                        ] ;
+                                    rdfs:subClassOf F1Fails:Driver_F1 ;
+                                    rdfs:comment "A Dirver involved into an Event"@en ;
+                                    rdfs:label "Driver F1 with Event"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#European
+F1Fails:European rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty F1Fails:TrackNation ;
+                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                            owl:oneOf [ rdf:type rdf:List ;
+                                                                        rdf:first "Italy" ;
+                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                   rdf:first "Monaco" ;
+                                                                                   rdf:rest rdf:nil
+                                                                                 ]
+                                                                      ]
+                                                          ]
+                                     ] ;
+                 rdfs:subClassOf F1Fails:Track ;
+                 owl:disjointWith F1Fails:Extra_European ;
+                 rdfs:comment "A track placed into the Europe" ;
+                 rdfs:label "European" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event
+F1Fails:Event rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Extra_European
+F1Fails:Extra_European rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty F1Fails:TrackNation ;
+                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                  owl:datatypeComplementOf [ rdf:type rdfs:Datatype ;
+                                                                                             owl:oneOf [ rdf:type rdf:List ;
+                                                                                                         rdf:first "Italy" ;
+                                                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                                                    rdf:first "Monaco" ;
+                                                                                                                    rdf:rest rdf:nil
+                                                                                                                  ]
+                                                                                                       ]
+                                                                                           ]
+                                                                ]
+                                           ] ;
+                       rdfs:subClassOf F1Fails:Track ;
+                       rdfs:comment "A track placed extra europe" ;
+                       rdfs:label "Extra - European" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Failure
+F1Fails:Failure rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty F1Fails:EventType ;
+                                      owl:hasValue "Failure"
+                                    ] ;
+                rdfs:subClassOf F1Fails:Event ;
+                owl:disjointWith F1Fails:Human_Error ;
+                rdfs:comment "Car Feilure Event on a vehicle" ;
+                rdfs:label "Failure" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Human_Error
+F1Fails:Human_Error rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty F1Fails:EventType ;
+                                          owl:hasValue "HumanError"
+                                        ] ;
+                    rdfs:subClassOf F1Fails:Event ;
+                    rdfs:comment "Human Error Event that involved just one car" ;
+                    rdfs:label "Human Error"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Long
+F1Fails:Long rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty F1Fails:TrackLength ;
+                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                        owl:onDatatype xsd:integer ;
+                                                        owl:withRestrictions ( [ xsd:minInclusive 4500
+                                                                               ]
+                                                                             )
+                                                      ]
+                                 ] ;
+             rdfs:subClassOf F1Fails:Track ;
+             owl:disjointWith F1Fails:Short ;
+             rdfs:comment "A track longer then 4500 meters" ;
+             rdfs:label "Long" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto
+F1Fails:Moto rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty F1Fails:WheelsNumber ;
+                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                        owl:onDatatype xsd:integer ;
+                                                        owl:withRestrictions ( [ xsd:maxExclusive 4
+                                                                               ]
+                                                                             )
+                                                      ]
+                                 ] ;
+             rdfs:subClassOf F1Fails:Vehicle ;
+             rdfs:comment "Motorcycle with a tubular or pressed sheet metal frame, an engine and two coplanar large diameter wheels." ;
+             rdfs:label "Moto" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull
+F1Fails:RedBull rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty F1Fails:TeamName ;
+                                      owl:hasValue "RedBull"
+                                    ] ;
+                rdfs:subClassOf F1Fails:Team ;
+                rdfs:comment "Teams leads by RedBull"@en ;
+                rdfs:label "RedBull"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Seasons
+F1Fails:Seasons rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ;
+                rdfs:comment "The season define the season on F1 on a specific year" ;
+                rdfs:label "Seasons" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Short
+F1Fails:Short rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty F1Fails:TrackLength ;
+                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                         owl:onDatatype xsd:integer ;
+                                                         owl:withRestrictions ( [ xsd:maxExclusive 4500
+                                                                                ]
+                                                                              )
+                                                       ]
+                                  ] ;
+              rdfs:subClassOf F1Fails:Track ;
+              rdfs:comment "A track shorter then 4500 meters" ;
+              rdfs:label "Short" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team
+F1Fails:Team rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari
+F1Fails:Team_Ferrari rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty F1Fails:TeamName ;
+                                           owl:hasValue "Ferrari"
+                                         ] ;
+                     rdfs:subClassOf F1Fails:Team ;
+                     rdfs:comment "Teams leads by Ferrari" ;
+                     rdfs:label "Ferrari"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track
+F1Fails:Track rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Race
+F1Fails:Track_Race rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty F1Fails:TrackType ;
+                                         owl:hasValue "Race"
+                                       ] ;
+                   rdfs:subClassOf F1Fails:Track ;
+                   owl:disjointWith F1Fails:Track_Street ;
+                   rdfs:comment "Track designed just for race, is permament during the year"@en ;
+                   rdfs:label "Race" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Street
+F1Fails:Track_Street rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty F1Fails:TrackType ;
+                                           owl:hasValue "Street"
+                                         ] ;
+                     rdfs:subClassOf F1Fails:Track ;
+                     rdfs:comment "Track not designed for race, is a street arranged for race for a small period of time" ;
+                     rdfs:label "Street"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle
+F1Fails:Vehicle rdf:type owl:Class ;
+                rdfs:comment "Generic name of any human-driven mechanical means used for transport" ;
+                rdfs:label "Vehicle" .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:comment "External onlogy about person" ;
+                                   rdfs:label "foaf - Person" ;
+                                   rdfs:seeAlso "http://xmlns.com/foaf/0.1/#term_Person" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2022
+F1Fails:Alfa_Romeo_2022 rdf:type owl:NamedIndividual ;
+                        F1Fails:WheelsNumber 4 ;
+                        rdfs:comment "Specific Car For the Specific Season" ;
+                        rdfs:label "Car@AlfaRomeo2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023
+F1Fails:Alfa_Romeo_2023 rdf:type owl:NamedIndividual ;
+                        F1Fails:WheelsNumber 4 ;
+                        rdfs:comment "Specific Car For the Specific Season"@en ;
+                        rdfs:label "Car@AlfaRomeo2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin_2023_2
+F1Fails:AstonMartin_2023_2 rdf:type owl:NamedIndividual ;
+                           F1Fails:Owned_By F1Fails:Team_AstonMartin_2023 ;
+                           rdfs:comment "Specific Car For the Specific Season. This the vehicle number 1"@en ;
+                           rdfs:label "Car@AstonMartin2023_1"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2022
+F1Fails:Aston_Martin_2022 rdf:type owl:NamedIndividual ;
+                          F1Fails:Driven_By F1Fails:Lance_Stroll ;
+                          F1Fails:WheelsNumber 4 ;
+                          rdfs:comment "Specific Car For the Specific Season"@en ;
+                          rdfs:label "Car@AstonMartin2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2023
+F1Fails:Aston_Martin_2023 rdf:type owl:NamedIndividual ,
+                                   F1Fails:Vehicle ;
+                          F1Fails:Driven_By F1Fails:Lance_Stroll ;
+                          F1Fails:Owned_By F1Fails:Team_AstonMartin_2023 ;
+                          F1Fails:WheelsNumber 4 ;
+                          rdfs:comment "Specific Car For the Specific Season. This the vehicle number 2"@en ;
+                          rdfs:label "Car@AstonMartin2023_2"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Charles_Leclerc
+F1Fails:Charles_Leclerc rdf:type owl:NamedIndividual ,
+                                 F1Fails:Driver_F1 ;
+                        F1Fails:DriverName "Charles Leclerc" ;
+                        rdfs:comment "Driver of a F1 Car"@en ;
+                        rdfs:label "Driver@CharlesLeclerc"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_1
+F1Fails:Event_Crash_1 rdf:type owl:NamedIndividual ,
+                               F1Fails:Event ;
+                      F1Fails:Event_Happened_In_Season F1Fails:Season_2023 ;
+                      F1Fails:Event_Happened_in_Track F1Fails:Track_AlbertPark_Melbourne ;
+                      F1Fails:Event_involved_Vehicle F1Fails:Aston_Martin_2023 ,
+                                                     F1Fails:Ferrari_2023 ;
+                      F1Fails:EventType "Crash" ;
+                      rdfs:comment "A crash between more then 1 vehicle"@en ;
+                      rdfs:label "Event@Crash1"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_2
+F1Fails:Event_Crash_2 rdf:type owl:NamedIndividual ,
+                               F1Fails:Event ;
+                      F1Fails:Event_Happened_In_Season F1Fails:Season_2023 ;
+                      F1Fails:Event_Happened_in_Track F1Fails:Track_Circuitde_Barcelona_Catalunya ;
+                      F1Fails:Event_involved_Vehicle F1Fails:Alfa_Romeo_2023 ,
+                                                     F1Fails:AstonMartin_2023_2 ;
+                      F1Fails:EventType "Crash" ;
+                      rdfs:comment "A crash between more then 1 vehicle"@en ;
+                      rdfs:label "Event@Crash2"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Failure_1
+F1Fails:Event_Failure_1 rdf:type owl:NamedIndividual ,
+                                 F1Fails:Event ;
+                        F1Fails:Event_Happened_In_Season F1Fails:Season_2022 ;
+                        F1Fails:Event_Happened_in_Track F1Fails:Track_AlbertPark_Melbourne ;
+                        F1Fails:Event_involved_Vehicle F1Fails:RedBull_2022 ;
+                        F1Fails:EventType "Failure" ;
+                        rdfs:comment "An event where a car has had a technical problem"@en ;
+                        rdfs:label "Event@Failure1"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Human_1
+F1Fails:Event_Human_1 rdf:type owl:NamedIndividual ,
+                               F1Fails:Event ;
+                      F1Fails:Event_Happened_In_Season F1Fails:Season_2010 ;
+                      F1Fails:Event_Happened_in_Track F1Fails:Track_Circuit_De_Monaco ;
+                      F1Fails:Event_involved_Vehicle F1Fails:Ferrari_2010 ;
+                      F1Fails:EventType "HumanError" ;
+                      rdfs:comment "An event where a car had a problem due to human error"@en ;
+                      rdfs:label "Event@Human1"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Failure2
+F1Fails:Failure2 rdf:type owl:NamedIndividual ,
+                          F1Fails:Event ;
+                 F1Fails:Event_Happened_in_Track F1Fails:Track_Bahrain_International_Circuit ;
+                 F1Fails:Event_involved_Vehicle F1Fails:Ferrari_2023 ;
+                 F1Fails:EventType "Failure" ;
+                 rdfs:comment "An event where a car has had a technical problem"@en ;
+                 rdfs:label "Event@Failure2"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Fernando_Alonso
+F1Fails:Fernando_Alonso rdf:type owl:NamedIndividual ,
+                                 F1Fails:Driver_F1 ;
+                        F1Fails:Drives F1Fails:AstonMartin_2023_2 ,
+                                       F1Fails:Ferrari_2010 ;
+                        F1Fails:DriverName "Fernando Alonso" ;
+                        rdfs:comment "Driver of a F1 Car"@en ;
+                        rdfs:label "Driver@FernandoAlonso"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010
+F1Fails:Ferrari_2010 rdf:type owl:NamedIndividual ,
+                              F1Fails:Vehicle ;
+                     F1Fails:WheelsNumber 4 ;
+                     rdfs:comment "Specific Car For the Specific Season"@en ;
+                     rdfs:label "Car@Ferrari2010"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2023
+F1Fails:Ferrari_2023 rdf:type owl:NamedIndividual ,
+                              F1Fails:Vehicle ;
+                     F1Fails:Driven_By F1Fails:Charles_Leclerc ;
+                     F1Fails:Owned_By F1Fails:Team_Ferrari_2023 ;
+                     rdfs:comment "Specific Car For the Specific Season"@en ;
+                     rdfs:label "Car@Ferrari2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#HumanError2
+F1Fails:HumanError2 rdf:type owl:NamedIndividual ,
+                             F1Fails:Event ;
+                    F1Fails:Event_Happened_In_Season F1Fails:Season_2023 ;
+                    F1Fails:Event_Happened_in_Track F1Fails:Track_Jeddah_Corniche_Circuit ;
+                    F1Fails:Event_involved_Vehicle F1Fails:Aston_Martin_2023 ;
+                    F1Fails:EventType "HumanError" ;
+                    rdfs:comment "An event where a car had a problem due to human error"@en ;
+                    rdfs:label "Event@Human2"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lance_Stroll
+F1Fails:Lance_Stroll rdf:type owl:NamedIndividual ,
+                              F1Fails:Driver_F1 ;
+                     F1Fails:DriverName "Lance Stroll" ;
+                     rdfs:comment "Driver of a F1 Car"@en ;
+                     rdfs:label "Driver@LanceStroll"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lando_Norris
+F1Fails:Lando_Norris rdf:type owl:NamedIndividual ,
+                              <http://xmlns.com/foaf/0.1/Person> ;
+                     F1Fails:Drives F1Fails:McLaren_2023 ;
+                     F1Fails:DriverName "Lando Norris" ;
+                     rdfs:comment "Driver of a F1 Car"@en ;
+                     rdfs:label "Driver@LandoNorris"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Max_Verstappen
+F1Fails:Max_Verstappen rdf:type owl:NamedIndividual ,
+                                F1Fails:Driver_F1 ;
+                       F1Fails:Drives F1Fails:RedBull_2022 ;
+                       rdfs:comment "Driver of a F1 Car"@en ;
+                       rdfs:label "Driver@MaxVerstappen"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren2023
+F1Fails:McLaren2023 rdf:type owl:NamedIndividual ,
+                             F1Fails:Team ;
+                    F1Fails:Owns F1Fails:McLaren_2023 ;
+                    F1Fails:Team_Run_In_Season F1Fails:Season_2023 ;
+                    rdfs:comment "Formula 1 team"@en ;
+                    rdfs:label "Team@McLaren2023" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren_2023
+F1Fails:McLaren_2023 rdf:type owl:NamedIndividual ,
+                              F1Fails:Vehicle ;
+                     rdfs:comment "Specific Car For the Specific Season"@en ;
+                     rdfs:label "Car@McLaren2023" .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto1
+F1Fails:Moto1 rdf:type owl:NamedIndividual ,
+                       F1Fails:Vehicle ;
+              F1Fails:WheelsNumber 2 ;
+              rdfs:comment "A moto"@en ;
+              rdfs:label "Moto@Moto1"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022
+F1Fails:RedBull_2022 rdf:type owl:NamedIndividual ,
+                              F1Fails:Vehicle ;
+                     rdfs:comment "Specific Car For the Specific Season"@en ;
+                     rdfs:label "Car@RedBull2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010
+F1Fails:Season_2010 rdf:type owl:NamedIndividual ,
+                             F1Fails:Seasons ;
+                    F1Fails:SeasonYear 2010 ;
+                    rdfs:comment "Formula 1 season specific to the year"@en ;
+                    rdfs:label "Season@Season2010"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022
+F1Fails:Season_2022 rdf:type owl:NamedIndividual ,
+                             F1Fails:Seasons ;
+                    F1Fails:SeasonYear 2022 ;
+                    rdfs:comment "Formula 1 season specific to the year"@en ;
+                    rdfs:label "Season@Season2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023
+F1Fails:Season_2023 rdf:type owl:NamedIndividual ,
+                             F1Fails:Seasons ;
+                    F1Fails:SeasonYear 2023 ;
+                    rdfs:comment "Formula 1 season specific to the year"@en ;
+                    rdfs:label "Season@Season2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2022
+F1Fails:Team_AlfaRomeo_2022 rdf:type owl:NamedIndividual ,
+                                     F1Fails:Team ;
+                            F1Fails:Owns F1Fails:Alfa_Romeo_2022 ;
+                            F1Fails:Team_Run_In_Season F1Fails:Season_2022 ;
+                            F1Fails:TeamName "Alfa Romeo" ;
+                            F1Fails:TeamSeason 2022 ;
+                            rdfs:comment "Formula 1 team"@en ;
+                            rdfs:label "Team@AlfaRomeo2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2023
+F1Fails:Team_AlfaRomeo_2023 rdf:type owl:NamedIndividual ,
+                                     F1Fails:Team ;
+                            F1Fails:Owns F1Fails:Alfa_Romeo_2023 ;
+                            F1Fails:Team_Run_In_Season F1Fails:Season_2023 ;
+                            F1Fails:TeamName "Alfa Romeo" ;
+                            F1Fails:TeamSeason 2023 ;
+                            rdfs:comment "Formula 1 team"@en ;
+                            rdfs:label "Team@AlfaRomeo2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2022
+F1Fails:Team_AstonMartin_2022 rdf:type owl:NamedIndividual ,
+                                       F1Fails:Team ;
+                              F1Fails:Owns F1Fails:Aston_Martin_2022 ;
+                              F1Fails:Team_Run_In_Season F1Fails:Season_2022 ;
+                              F1Fails:TeamName "Aston Martin" ;
+                              F1Fails:TeamSeason 2022 ;
+                              rdfs:comment "Formula 1 team"@en ;
+                              rdfs:label "Team@AstonMartin2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2023
+F1Fails:Team_AstonMartin_2023 rdf:type owl:NamedIndividual ,
+                                       F1Fails:Team ;
+                              F1Fails:Team_Run_In_Season F1Fails:Season_2023 ;
+                              F1Fails:TeamName "Aston Martin" ;
+                              F1Fails:TeamSeason 2023 ;
+                              rdfs:comment "Formula 1 team"@en ;
+                              rdfs:label "Team@AstonMartin2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2010
+F1Fails:Team_Ferrari_2010 rdf:type owl:NamedIndividual ,
+                                   F1Fails:Team ;
+                          F1Fails:Owns F1Fails:Ferrari_2010 ;
+                          F1Fails:Team_Run_In_Season F1Fails:Season_2010 ;
+                          F1Fails:TeamName "Ferrari" ;
+                          F1Fails:TeamSeason 2010 ;
+                          rdfs:comment "Formula 1 team"@en ;
+                          rdfs:label "Team@Ferrari2010"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2023
+F1Fails:Team_Ferrari_2023 rdf:type owl:NamedIndividual ,
+                                   F1Fails:Team ;
+                          F1Fails:Team_Run_In_Season F1Fails:Season_2023 ;
+                          F1Fails:TeamName "Ferrari" ;
+                          F1Fails:TeamSeason 2023 ;
+                          rdfs:comment "Formula 1 team"@en ;
+                          rdfs:label "Team@Ferrari2023"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_RedBull_2022
+F1Fails:Team_RedBull_2022 rdf:type owl:NamedIndividual ,
+                                   F1Fails:Team ;
+                          F1Fails:Owns F1Fails:RedBull_2022 ;
+                          F1Fails:Team_Run_In_Season F1Fails:Season_2022 ;
+                          F1Fails:TeamName "RedBull" ;
+                          F1Fails:TeamSeason 2022 ;
+                          rdfs:comment "Formula 1 team"@en ;
+                          rdfs:label "Team@RedBull2022"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_AlbertPark_Melbourne
+F1Fails:Track_AlbertPark_Melbourne rdf:type owl:NamedIndividual ,
+                                            F1Fails:Track ;
+                                   F1Fails:TrackLength 5278 ;
+                                   F1Fails:TrackLocation "Melbourne" ;
+                                   F1Fails:TrackNation "Australia" ;
+                                   F1Fails:TrackType "Street" ;
+                                   rdfs:comment "Track where a grand prix was raced"@en ;
+                                   rdfs:label "Track@AlbertParkMelbourne"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Autodromo_Nazionale_Di_Monza
+F1Fails:Track_Autodromo_Nazionale_Di_Monza rdf:type owl:NamedIndividual ;
+                                           F1Fails:TrackLength 5793 ;
+                                           F1Fails:TrackLocation "Monza" ;
+                                           F1Fails:TrackNation "Italy" ;
+                                           F1Fails:TrackType "Race" ;
+                                           F1Fails:TrackUsed "true"^^xsd:boolean ;
+                                           rdfs:comment "Track where a grand prix was raced"@en ;
+                                           rdfs:label "Track@AutodromoNazionaleDiMonza"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Bahrain_International_Circuit
+F1Fails:Track_Bahrain_International_Circuit rdf:type owl:NamedIndividual ;
+                                            F1Fails:TrackLength 5412 ;
+                                            F1Fails:TrackLocation "Sakhir" ;
+                                            F1Fails:TrackNation "Bahrein" ;
+                                            F1Fails:TrackType "Race" ;
+                                            F1Fails:TrackUsed "true"^^xsd:boolean ;
+                                            rdfs:comment "Track where a grand prix was raced"@en ;
+                                            rdfs:label "Track@BahrainInternationalCircuit"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuit_De_Monaco
+F1Fails:Track_Circuit_De_Monaco rdf:type owl:NamedIndividual ;
+                                F1Fails:TrackLength 3337 ;
+                                F1Fails:TrackLocation "Monaco" ;
+                                F1Fails:TrackNation "Monaco" ;
+                                F1Fails:TrackType "Street" ;
+                                F1Fails:TrackUsed "true"^^xsd:boolean ;
+                                rdfs:comment "Track where a grand prix was raced"@en ;
+                                rdfs:label "Track@CircuitDeMonaco"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuitde_Barcelona_Catalunya
+F1Fails:Track_Circuitde_Barcelona_Catalunya rdf:type owl:NamedIndividual ,
+                                                     F1Fails:Track ;
+                                            F1Fails:TrackLength 4657 ;
+                                            F1Fails:TrackLocation "Montmeló" ;
+                                            F1Fails:TrackNation "Spain" ;
+                                            F1Fails:TrackType "Race" ;
+                                            F1Fails:TrackUsed "true"^^xsd:boolean ;
+                                            rdfs:comment "Track where a grand prix was raced"@en ;
+                                            rdfs:label "Track@CircuitdeBarcelonaCatalunya"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Jeddah_Corniche_Circuit
+F1Fails:Track_Jeddah_Corniche_Circuit rdf:type owl:NamedIndividual ;
+                                      F1Fails:TrackLength 6174 ;
+                                      F1Fails:TrackLocation "Jeddah" ;
+                                      F1Fails:TrackNation "Saudi Arabian" ;
+                                      F1Fails:TrackType "Race" ;
+                                      F1Fails:TrackUsed "true"^^xsd:boolean ;
+                                      rdfs:comment "Track where a grand prix was raced"@en ;
+                                      rdfs:label "Track@JeddahCornicheCircuit"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valentino_Rossi
+F1Fails:Valentino_Rossi rdf:type owl:NamedIndividual ,
+                                 <http://xmlns.com/foaf/0.1/Person> ;
+                        F1Fails:Drives F1Fails:Moto1 ;
+                        rdfs:comment "Driver Of MotoGp"@en ;
+                        rdfs:label "Driver@ValentinoRossi"@en .
+
+
+###  http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valtteri_Bottas
+F1Fails:Valtteri_Bottas rdf:type owl:NamedIndividual ,
+                                 F1Fails:Driver_F1 ;
+                        F1Fails:Drives F1Fails:Alfa_Romeo_2022 ,
+                                       F1Fails:Alfa_Romeo_2023 ;
+                        F1Fails:DriverName "Valtteri Bottas" ;
+                        rdfs:comment "Driver of a F1 Car"@en ;
+                        rdfs:label "Driver@ValtteriBottas"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+F1Fails:Car rdfs:comment "A vehicle propelled by its own engine which carries on board the source of the energy it needs; it has four wheels and an engine"@en ;
+            rdfs:label "Car"@en .
+
+
+F1Fails:Driver_F1 rdfs:label "Driver F1"@en ;
+                  rdfs:seeAlso "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"@en ;
+                  rdfs:comment "A person who drives some F1 Cars"@en .
+
+
+F1Fails:Event rdfs:label "Event"@en ;
+              rdfs:comment "Define an event that can happen into a grand prix during a season"@en .
+
+
+F1Fails:Team rdfs:label "Team"@en ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"@en ;
+             rdfs:comment "In motor sports, motor racing, motorcycling and motor boating, the set of racing cars of the same production company and the related organisation; with further semantic expansion, organized complex of machines and professional and amateur runners, directed by a prosecutor or a technical director"@en .
+
+
+F1Fails:Track rdfs:seeAlso "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits"@en ;
+              rdfs:comment "Place specifically intended for car and motorcycle races in a closed circuit, consisting of a track, generally of asphalt, and various equipment"@en ;
+              rdfs:label "Track"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( F1Fails:Season_2010
+                        F1Fails:Season_2022
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( F1Fails:Season_2010
+                        F1Fails:Season_2023
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( F1Fails:Season_2022
+                        F1Fails:Season_2023
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
