@@ -1,0 +1,1732 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#"
+     xml:base="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails"
+     xmlns:dc="http://purl.org/dc/elements/1.1/#"
+     xmlns:f1="http://www.semanticweb.org/federicoprandi/ontologies/"
+     xmlns:bag="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#"
+     xmlns:bbc="http://www.bbc.co.uk/ontologies/sport/#"
+     xmlns:dc1="https://protege.stanford.edu/plugins/owl/dc/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:veh="http://ontology.eil.utoronto.ca/icity/Vehicle/#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/#"
+     xmlns:F1Fails="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl"/>
+        <dc:creator xml:lang="en">Federico Prandi</dc:creator>
+        <dc:date xml:lang="en">5/07/2023</dc:date>
+        <dc:description xml:lang="en">This ontology want to describe the Accidents happened on the Formula 1 Races.</dc:description>
+        <dc:title xml:lang="en">Formula 1 Fails Ontology</dc:title>
+        <vann:preferredNamespacePrefix xml:lang="en">F1Fails</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri xml:lang="en">http://www.semanticweb.org/federicoprandi/ontologies/F1Fails</vann:preferredNamespaceUri>
+        <rdfs:label xml:lang="en">F1Fails</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/#preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/#preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/#preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/#preferredNamespaceUri"/>
+    
+
+
+    <!-- https://protege.stanford.edu/plugins/owl/dc/dublincore.owlauthor -->
+
+    <owl:AnnotationProperty rdf:about="https://protege.stanford.edu/plugins/owl/dc/dublincore.owlauthor"/>
+    
+
+
+    <!-- https://protege.stanford.edu/plugins/owl/dc/dublincore.owldate -->
+
+    <owl:AnnotationProperty rdf:about="https://protege.stanford.edu/plugins/owl/dc/dublincore.owldate"/>
+    
+
+
+    <!-- https://protege.stanford.edu/plugins/owl/dc/dublincore.owldescription -->
+
+    <owl:AnnotationProperty rdf:about="https://protege.stanford.edu/plugins/owl/dc/dublincore.owldescription"/>
+    
+
+
+    <!-- https://protege.stanford.edu/plugins/owl/dc/dublincore.owltitle -->
+
+    <owl:AnnotationProperty rdf:about="https://protege.stanford.edu/plugins/owl/dc/dublincore.owltitle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_Involved_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_Involved_In">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_Vehicle"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:comment xml:lang="en">A car that is involved in accident of some type</rdfs:comment>
+        <rdfs:label xml:lang="en">Car Involved in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driven_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driven_By">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives"/>
+        <rdfs:comment xml:lang="en">Car driven by some driver</rdfs:comment>
+        <rdfs:label xml:lang="en">Driven by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Involved_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Involved_In">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_the_driver"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_Involved_In"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Returns Driver involved in at least one event. It uses a chain property:
+Driver Drives a Car -&gt; a Car is involved in an event -&gt; so the driver is involved the event</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver involved in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Work_For -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Work_For">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Driver_is"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owned_By"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">The driver works for a specific team</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver Works For</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:comment xml:lang="en">A driver drives a car</rdfs:comment>
+        <rdfs:label xml:lang="en">Drives</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_In_Season -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_In_Season">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_With_Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Involve_The_Team"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Run_In_Season"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">An Event happen into a specific season</rdfs:comment>
+        <rdfs:label xml:lang="en">Event Happened in Season</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_in_Track -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Happened_in_Track">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Involved_In_Event"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:comment xml:lang="en">An Event happed into a specific track</rdfs:comment>
+        <rdfs:label xml:lang="en">Event Happened in a Track</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Involve_The_Team -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Involve_The_Team">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Involved_In_Event"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_Vehicle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owned_By"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">A team is inolved into a specific Event
+An Event Crashed with some Vehicle -&gt; Vheicle is owned by a Team -&gt; Event involve a Team</rdfs:comment>
+        <rdfs:label xml:lang="en">Event involved the Team</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_Vehicle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_Vehicle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:comment xml:lang="en">An Event crash with some vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Event involved the Vehicle</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_the_driver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_involved_the_driver">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+        <rdfs:comment xml:lang="en">An event involved a driver into that</rdfs:comment>
+        <rdfs:label xml:lang="en">Event involved the Driver</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owned_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owned_By">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owns"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:comment xml:lang="en">A car is owned by a team</rdfs:comment>
+        <rdfs:label xml:lang="en">Owned By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Owns">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:comment xml:lang="en">A team owns a car</rdfs:comment>
+        <rdfs:label xml:lang="en">Owns</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_With_Event -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_With_Event">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:comment xml:lang="en">In a season happen an event</rdfs:comment>
+        <rdfs:label xml:lang="en">Season with Event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Seasons_has_the_Team -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Seasons_has_the_Team">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Run_In_Season"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:comment xml:lang="en">Contains all the teams that run into that season</rdfs:comment>
+        <rdfs:label xml:lang="en">Season has the Teams</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Driver_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Driver_is">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+        <rdfs:comment xml:lang="en">People who work for a team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team Driver is</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Involved_In_Event -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Involved_In_Event">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:comment xml:lang="en">A Team involved in an Event</rdfs:comment>
+        <rdfs:label xml:lang="en">Team Involved In Event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Run_In_Season -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Run_In_Season">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <rdfs:comment xml:lang="en">A team run into a season</rdfs:comment>
+        <rdfs:label xml:lang="en">Team run in Season</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Involved_In_Event -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Involved_In_Event">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:comment xml:lang="en">A track used into a season like a grandPrix</rdfs:comment>
+        <rdfs:label xml:lang="en">Track involved in Event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#DriverName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#DriverName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+        <rdfs:comment xml:lang="en">Name of the driver</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Crash</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Failure</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>HumanError</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Type of the event</rdfs:comment>
+        <rdfs:label xml:lang="en">Event Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#SeasonYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#SeasonYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">A year of the Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Season Year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:comment xml:lang="en">Name of the team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamSeason -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamSeason">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Season in which the team raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Team Season</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Track length in meter</rdfs:comment>
+        <rdfs:label xml:lang="en">Track Length</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Track name</rdfs:comment>
+        <rdfs:label xml:lang="en">Track Location</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackNation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackNation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Nation of the track</rdfs:comment>
+        <rdfs:label xml:lang="en">Track Nation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackType">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Race</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Street</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Type of the track enumerated for Race And Street</rdfs:comment>
+        <rdfs:label xml:lang="en">Track Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackUsed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Set if it is still used</rdfs:comment>
+        <rdfs:label xml:lang="en">Track Used</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#WheelsNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#WheelsNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Number of wheels</rdfs:comment>
+        <rdfs:label xml:lang="en">Wheels Number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/icity/Vehicle/#Vehicle -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/icity/Vehicle/#Vehicle">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:comment>External ontology about vehicle</rdfs:comment>
+        <rdfs:label>iCity - Vehicle</rdfs:label>
+        <rdfs:seeAlso>https://enterpriseintegrationlab.github.io/icity/Vehicle/doc/index-en.html#Vehicle</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bbc.co.uk/ontologies/sport/#SportingOrganisation -->
+
+    <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/sport/#SportingOrganisation">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:comment xml:lang="en">External onology about teams</rdfs:comment>
+        <rdfs:label xml:lang="en">BBC - Team</rdfs:label>
+        <rdfs:seeAlso>https://iptc.org/thirdparty/bbc-ontologies/sport.html</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#League_F1 -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#League_F1">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#list"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#McLaren -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#McLaren">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName"/>
+                <owl:hasValue>McLaren</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+        <rdfs:comment xml:lang="en">Teams leads by McLaren</rdfs:comment>
+        <rdfs:label xml:lang="en">McLaren</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1 -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <rdfs:comment xml:lang="en">F1 constructor Team joined the F1 League in history</rdfs:comment>
+        <rdfs:label xml:lang="en">Team F1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#list -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#list">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <rdfs:comment xml:lang="en">List - An ordered array of items, that can be present in multiple copies</rdfs:comment>
+        <rdfs:label xml:lang="en">list</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName"/>
+                <owl:hasValue>Alfa Romeo</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+        <rdfs:comment xml:lang="en">Teams leads by RedBull</rdfs:comment>
+        <rdfs:label xml:lang="en">Alfa Romeo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName"/>
+                <owl:hasValue>Aston Martin</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari"/>
+        <rdfs:comment xml:lang="en">Teams leads by Aston Martin</rdfs:comment>
+        <rdfs:label xml:lang="en">Aston Martin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#WheelsNumber"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driven_By"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car"/>
+        <rdfs:comment xml:lang="en">A car that compete into a Formula 1 Series</rdfs:comment>
+        <rdfs:label xml:lang="en">Car F1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1_Crashed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1_Crashed">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_Involved_In"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1"/>
+        <rdfs:comment xml:lang="en">Car involved into a car crash</rdfs:comment>
+        <rdfs:label xml:lang="en">Car F1 Crashed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Crash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Crash">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType"/>
+                <owl:hasValue>Crash</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Failure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Human_Error"/>
+        <rdfs:comment xml:lang="en">Car crash event between two vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Crash</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Work_For"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Drives"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car_F1"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1_Involved_In_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1_Involved_In_Event">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_Involved_In"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <rdfs:comment xml:lang="en">A Dirver involved into an Event</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver F1 with Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#European -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#European">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackNation"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:oneOf>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Austria</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Italy</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Monaco</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Spain</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </owl:oneOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Extra_European"/>
+        <rdfs:comment xml:lang="en">A track placed into the Europe</rdfs:comment>
+        <rdfs:label xml:lang="en">European</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Extra_European -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Extra_European">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackNation"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:datatypeComplementOf>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Austria</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Italy</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Monaco</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>Spain</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:datatypeComplementOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:comment xml:lang="en">A track placed extra europe</rdfs:comment>
+        <rdfs:label xml:lang="en">Extra - European</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Failure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Failure">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType"/>
+                <owl:hasValue>Failure</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Human_Error"/>
+        <rdfs:comment xml:lang="en">Car Failure Event on a vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Failure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Human_Error -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Human_Error">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#EventType"/>
+                <owl:hasValue>HumanError</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <rdfs:comment xml:lang="en">Human Error Event that involved just one car</rdfs:comment>
+        <rdfs:label xml:lang="en">Human Error</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Long -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Long">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLength"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4500</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Short"/>
+        <rdfs:comment xml:lang="en">A track longer then 4500 meters</rdfs:comment>
+        <rdfs:label xml:lang="en">Long</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#WheelsNumber"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <rdfs:comment xml:lang="en">Motorcycle with a tubular or pressed sheet metal frame, an engine and two coplanar large diameter wheels.</rdfs:comment>
+        <rdfs:label xml:lang="en">Moto</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName"/>
+                <owl:hasValue>RedBull</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+        <rdfs:comment xml:lang="en">Teams leads by RedBull</rdfs:comment>
+        <rdfs:label xml:lang="en">RedBull</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Short -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Short">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackLength"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4500</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:comment xml:lang="en">A track shorter then 4500 meters</rdfs:comment>
+        <rdfs:label xml:lang="en">Short</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TeamName"/>
+                <owl:hasValue>Ferrari</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#TeamF1"/>
+        <rdfs:comment xml:lang="en">Teams leads by Ferrari</rdfs:comment>
+        <rdfs:label xml:lang="en">Ferrari</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Race -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Race">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackType"/>
+                <owl:hasValue>Race</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Street"/>
+        <rdfs:comment xml:lang="en">Track designed just for race, is permament during the year</rdfs:comment>
+        <rdfs:label xml:lang="en">Race</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Street -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Street">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#TrackType"/>
+                <owl:hasValue>Street</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <rdfs:comment xml:lang="en">Track not designed for race, is a street arranged for race for a small period of time</rdfs:comment>
+        <rdfs:label xml:lang="en">Street</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle">
+        <rdfs:comment xml:lang="en">Generic name of any human-driven mechanical means used for transport</rdfs:comment>
+        <rdfs:label xml:lang="en">Vehicle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment>External onlogy about person</rdfs:comment>
+        <rdfs:label>foaf - Person</rdfs:label>
+        <rdfs:seeAlso>http://xmlns.com/foaf/0.1/#term_Person</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#League_F1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#League_F1">
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2022">
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment>Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@AlfaRomeo2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023">
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@AlfaRomeo2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin_2023_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin_2023_2">
+        <Owned_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2023"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season. This the vehicle number 1</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@AstonMartin2023_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2022">
+        <Driven_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lance_Stroll"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@AstonMartin2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2023_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2023_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <Driven_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lance_Stroll"/>
+        <Owned_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2023"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season. This the vehicle number 2</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@AstonMartin2023_2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Charles_Leclerc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Charles_Leclerc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <DriverName>Charles Leclerc</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@CharlesLeclerc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_AlbertPark_Melbourne"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2023_1"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2023"/>
+        <EventType>Crash</EventType>
+        <rdfs:comment xml:lang="en">A crash between more then 1 vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Crash1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Crash_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuitde_Barcelona_Catalunya"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin_2023_2"/>
+        <EventType>Crash</EventType>
+        <rdfs:comment xml:lang="en">A crash between more then 1 vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Crash2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Failure_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Failure_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_AlbertPark_Melbourne"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022"/>
+        <EventType>Failure</EventType>
+        <rdfs:comment xml:lang="en">An event where a car has had a technical problem</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Failure1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Failure_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Failure_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Bahrain_International_Circuit"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2023"/>
+        <EventType>Failure</EventType>
+        <rdfs:comment xml:lang="en">An event where a car has had a technical problem</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Failure2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Human_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Human_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuit_De_Monaco"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010"/>
+        <EventType>HumanError</EventType>
+        <rdfs:comment xml:lang="en">An event where a car had a problem due to human error</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Human1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Human_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event_Human_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event"/>
+        <Event_Happened_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <Event_Happened_in_Track rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Jeddah_Corniche_Circuit"/>
+        <Event_involved_Vehicle rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2023_1"/>
+        <EventType>HumanError</EventType>
+        <rdfs:comment xml:lang="en">An event where a car had a problem due to human error</rdfs:comment>
+        <rdfs:label xml:lang="en">Event@Human2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Fernando_Alonso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Fernando_Alonso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#AstonMartin_2023_2"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010"/>
+        <DriverName>Fernando Alonso</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@FernandoAlonso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@Ferrari2010</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <Driven_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Charles_Leclerc"/>
+        <Owned_By rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2023"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@Ferrari2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lance_Stroll -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lance_Stroll">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <DriverName>Lance Stroll</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@LanceStroll</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lando_Norris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Lando_Norris">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren_2023"/>
+        <DriverName>Lando Norris</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@LandoNorris</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Max_Verstappen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Max_Verstappen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022"/>
+        <DriverName>Max Verstappen</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@MaxVerstappen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren_2023"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <TeamName>McLaren</TeamName>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label>Team@McLaren2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#McLaren_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label>Car@McLaren2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</WheelsNumber>
+        <rdfs:comment xml:lang="en">A moto</rdfs:comment>
+        <rdfs:label xml:lang="en">Moto@Moto1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Vehicle"/>
+        <WheelsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</WheelsNumber>
+        <rdfs:comment xml:lang="en">Specific Car For the Specific Season</rdfs:comment>
+        <rdfs:label xml:lang="en">Car@RedBull2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <SeasonYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</SeasonYear>
+        <rdfs:comment xml:lang="en">Formula 1 season specific to the year</rdfs:comment>
+        <rdfs:label xml:lang="en">Season@Season2010</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <SeasonYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</SeasonYear>
+        <rdfs:comment xml:lang="en">Formula 1 season specific to the year</rdfs:comment>
+        <rdfs:label xml:lang="en">Season@Season2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season"/>
+        <SeasonYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</SeasonYear>
+        <rdfs:comment xml:lang="en">Formula 1 season specific to the year</rdfs:comment>
+        <rdfs:label xml:lang="en">Season@Season2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2022"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        <TeamName>Alfa Romeo</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@AlfaRomeo2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AlfaRomeo_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <TeamName>Alfa Romeo</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@AlfaRomeo2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Aston_Martin_2022"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        <TeamName>Aston Martin</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@AstonMartin2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_AstonMartin_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <TeamName>Aston Martin</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@AstonMartin2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Ferrari_2010"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010"/>
+        <TeamName>Ferrari</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@Ferrari2010</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_Ferrari_2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        <TeamName>Ferrari</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@Ferrari2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_RedBull_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team_RedBull_2022">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team"/>
+        <Owns rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#RedBull_2022"/>
+        <Team_Run_In_Season rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        <TeamName>RedBull</TeamName>
+        <TeamSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</TeamSeason>
+        <rdfs:comment xml:lang="en">Formula 1 team</rdfs:comment>
+        <rdfs:label xml:lang="en">Team@RedBull2022</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_AlbertPark_Melbourne -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_AlbertPark_Melbourne">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5278</TrackLength>
+        <TrackLocation>Melbourne</TrackLocation>
+        <TrackNation>Australia</TrackNation>
+        <TrackType>Street</TrackType>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@AlbertParkMelbourne</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Autodromo_Nazionale_Di_Monza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Autodromo_Nazionale_Di_Monza">
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5793</TrackLength>
+        <TrackLocation>Monza</TrackLocation>
+        <TrackNation>Italy</TrackNation>
+        <TrackType>Race</TrackType>
+        <TrackUsed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TrackUsed>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@AutodromoNazionaleDiMonza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Bahrain_International_Circuit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Bahrain_International_Circuit">
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5412</TrackLength>
+        <TrackLocation>Sakhir</TrackLocation>
+        <TrackNation>Bahrein</TrackNation>
+        <TrackType>Race</TrackType>
+        <TrackUsed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TrackUsed>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@BahrainInternationalCircuit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuit_De_Monaco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuit_De_Monaco">
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3337</TrackLength>
+        <TrackLocation>Monaco</TrackLocation>
+        <TrackNation>Monaco</TrackNation>
+        <TrackType>Street</TrackType>
+        <TrackUsed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TrackUsed>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@CircuitDeMonaco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuitde_Barcelona_Catalunya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Circuitde_Barcelona_Catalunya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track"/>
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4657</TrackLength>
+        <TrackLocation>Montmeló</TrackLocation>
+        <TrackNation>Spain</TrackNation>
+        <TrackType>Race</TrackType>
+        <TrackUsed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TrackUsed>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@CircuitdeBarcelonaCatalunya</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Jeddah_Corniche_Circuit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track_Jeddah_Corniche_Circuit">
+        <TrackLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6174</TrackLength>
+        <TrackLocation>Jeddah</TrackLocation>
+        <TrackNation>Saudi Arabian</TrackNation>
+        <TrackType>Race</TrackType>
+        <TrackUsed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TrackUsed>
+        <rdfs:comment xml:lang="en">Track where a grand prix was raced</rdfs:comment>
+        <rdfs:label xml:lang="en">Track@JeddahCornicheCircuit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valentino_Rossi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valentino_Rossi">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Moto1"/>
+        <DriverName>Valentino Rossi</DriverName>
+        <rdfs:comment xml:lang="en">Driver Of MotoGp</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@ValentinoRossi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valtteri_Bottas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Valtteri_Bottas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver_F1"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2022"/>
+        <Drives rdf:resource="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Alfa_Romeo_2023"/>
+        <DriverName>Valtteri Bottas</DriverName>
+        <rdfs:comment xml:lang="en">Driver of a F1 Car</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver@ValtteriBottas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#League_F1">
+        <rdfs:comment xml:lang="en">The F1 League. This means that is the collection of all F1 Season</rdfs:comment>
+        <rdfs:label xml:lang="en">League F1</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Car">
+        <rdfs:comment xml:lang="en">A vehicle propelled by its own engine which carries on board the source of the energy it needs; it has four wheels and an engine</rdfs:comment>
+        <rdfs:label xml:lang="en">Car</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Driver">
+        <rdfs:comment xml:lang="en">A person who drives some F1 Cars</rdfs:comment>
+        <rdfs:label xml:lang="en">Driver</rdfs:label>
+        <rdfs:comment xml:lang="en">A person who drive some vehicles</rdfs:comment>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/List_of_Formula_One_drivers</rdfs:seeAlso>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <rdfs:comment xml:lang="en">Define an event that can happen into a grand prix during a season</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season">
+        <rdfs:label xml:lang="en">Season</rdfs:label>
+        <rdfs:comment xml:lang="en">The season define the F1 season on a specific year</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Team">
+        <rdfs:label xml:lang="en">Team</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/List_of_Formula_One_constructors</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">In motor sports, motor racing, motorcycling and motor boating, the set of racing cars of the same production company and the related organisation; with further semantic expansion, organized complex of machines and professional and amateur runners, directed by a prosecutor or a technical director</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Track">
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/List_of_Formula_One_circuits</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Place specifically intended for car and motorcycle races in a closed circuit, consisting of a track, generally of asphalt, and various equipment</rdfs:comment>
+        <rdfs:label xml:lang="en">Track</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2010"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2022"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federicoprandi/ontologies/F1Fails#Season_2023"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
